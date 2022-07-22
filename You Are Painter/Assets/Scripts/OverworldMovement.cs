@@ -2,17 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Painting : MonoBehaviour
+public class OverworldMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody painter;
-
-    void checkIfHitUsingBrush(){
-        
-    }
-
-    void checkIfPaintUsingBrush(){
-
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +13,6 @@ public class Painting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkIfHitUsingBrush();
-        checkIfPaintUsingBrush();
+        
     }
 }
