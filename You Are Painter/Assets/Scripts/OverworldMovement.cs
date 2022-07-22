@@ -18,10 +18,12 @@ public class OverworldMovement : MonoBehaviour
         if(Mathf.Abs(Input.GetAxis("Horizontal")) != 0){
             painter.velocity = new Vector3(Input.GetAxis("Horizontal") * 5.0f, painter.velocity.y, 0);
         }
-        if(Mathf.Abs(Input.GetAxis("Vertical")) == 1 && timeHoldButton<1.0f){
+        if(Mathf.Abs(Input.GetAxis("Vertical")) > 0 && timeHoldButton<1.0f){
             timeHoldButton = timeHoldButton + Time.deltaTime;
-            painter.velocity = new Vector3(painter.velocity.x, Input.GetAxis("Vertical") * 5.0f, 0);
+            painter.velocity = new Vector3(painter.velocity.x, Input.GetAxis("Vertical") * 8.0f, 0);
         }
-        timeHoldButton = 0;
+        if(painter.velocity.y == 0){
+            timeHoldButton = 0;
+        }
     }
 }
