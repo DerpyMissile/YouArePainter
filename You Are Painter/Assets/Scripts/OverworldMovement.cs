@@ -22,7 +22,7 @@ public class OverworldMovement : MonoBehaviour
             timeHoldButton = timeHoldButton + Time.deltaTime;
             painter.velocity = new Vector3(painter.velocity.x, Input.GetAxis("Vertical") * 8.0f, 0);
         }
-        if(painter.velocity.y == 0){
+        if(Mathf.RoundToInt(painter.velocity.y) == 0){
             timeHoldButton = 0;
         }
     }
