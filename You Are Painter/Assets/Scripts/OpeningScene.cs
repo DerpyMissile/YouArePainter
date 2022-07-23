@@ -9,7 +9,7 @@ public class OpeningScene : MonoBehaviour
 
     IEnumerator startGame(){
         yield return new WaitForSeconds(3.0f);
-        while(platform.position.y <= -6){
+        while(platform.position.y <= -4){
             platform.velocity = new Vector3(0, 3, 0);
         }
         platform.velocity = new Vector3(0,0,0);
