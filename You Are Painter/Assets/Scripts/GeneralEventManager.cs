@@ -2,27 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GeneralEventManager : MonoBehaviour
+public static class GeneralEventManager
 {
-    private GameObject painter;
-    private int stepsTaken = 0;
+    public static int stepsTaken = 0;
+    public static int scene = 1;
 
-    void addSteps(){
+    public static void addScene(){
+        scene++;
+    }
+
+    public static int whatScene(){
+        return scene;
+    }
+
+    public static void addSteps(){
         stepsTaken++;
     }
 
-    int howManySteps(){
+    public static int howManySteps(){
         return stepsTaken;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
