@@ -533,6 +533,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   painter: {fileID: 203756855}
+  greatSage: {fileID: 0}
+  nameText: {fileID: 0}
+  speechText: {fileID: 0}
+  leftPerson: {fileID: 0}
+  rightPerson: {fileID: 0}
 --- !u!1 &310123507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1409,8 @@ MonoBehaviour:
   wasd: {fileID: 2038699291}
   leftMouse: {fileID: 854804524}
   rightMouse: {fileID: 1106206398}
+  light1: {fileID: 2046269700}
+  light2: {fileID: 919725587}
 --- !u!1 &1902796858
 GameObject:
   m_ObjectHideFlags: 0

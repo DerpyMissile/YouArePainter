@@ -16,14 +16,19 @@ public class OpeningScene : MonoBehaviour
     [SerializeField] GameObject leftMouse;
     [SerializeField] GameObject rightMouse;
 
+    [SerializeField] GameObject light1;
+    [SerializeField] GameObject light2;
+
     bool wentThrough = false;
 
     IEnumerator startGame(){
         yield return new WaitForSeconds(1.0f);
         you.SetActive(true);
+        light1.SetActive(true);
         yield return new WaitForSeconds(1.0f);
         are.SetActive(true);
         yield return new WaitForSeconds(1.0f);
+        light2.SetActive(true);
         painterTheWord.SetActive(true);
         yield return new WaitForSeconds(3.0f);
         if(platform.position.y <= -4){
@@ -54,6 +59,8 @@ public class OpeningScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        light1.SetActive(false);
+        light2.SetActive(false);
         you.SetActive(false);
         are.SetActive(false);
         painterTheWord.SetActive(false);
