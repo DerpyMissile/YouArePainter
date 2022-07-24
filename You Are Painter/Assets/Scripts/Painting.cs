@@ -13,6 +13,7 @@ public class Painting : MonoBehaviour
     void checkIfHitUsingBrush(){
         if(Input.GetMouseButtonDown(0)){
             Instantiate(inkblob, hitspace, Quaternion.identity);
+            OverseerOfTheBattlefield.hitEnemyWithBrush(hitspace);
         }
     }
 

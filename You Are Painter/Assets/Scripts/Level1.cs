@@ -10,6 +10,7 @@ public class Level1 : MonoBehaviour
     [SerializeField] List<Monster> enemiesOnTheRightBuilding = new List<Monster>();
     [SerializeField] List<Monster> enemiesOnTheRoad = new List<Monster>();
     [SerializeField] List<Monster> enemiesOnTheBeach = new List<Monster>();
+    List<Monster> allMonster = new List<Monster>();
     [SerializeField] PainterInBattle thePainter;
     public Monster[] placeholder1;
 
@@ -59,10 +60,10 @@ public class Level1 : MonoBehaviour
     }
 
     void checkForReals(){
-        if(leftClear && rightClear){
+        if(leftClear && rightClear && !yellowOrb.activeInHierarchy){
             yellowOrb.SetActive(true);
         }
-        if(beachClear && roadClear){
+        if(beachClear && roadClear && !blueOrb.activeInHierarchy){
             blueOrb.SetActive(true);
         }
     }
@@ -75,25 +76,42 @@ public class Level1 : MonoBehaviour
         if(Mathf.RoundToInt(thePainter.transform.position.x) == Mathf.RoundToInt(blueOrb.transform.position.x) && Mathf.RoundToInt(thePainter.transform.position.z) == Mathf.RoundToInt(blueOrb.transform.position.z)){
             Destroy(blueOrb);
             GeneralEventManager.addToOrbs("Blue");
+            StartCoroutine(endLevel());
         }
+    }
+
+    IEnumerator endLevel(){
+        Scene currentScene = SceneManager.GetActiveScene();
+        AsyncOperation asyncload = SceneManager.LoadSceneAsync("Overworld", LoadSceneMode.Additive);
+        while(!asyncload.isDone){
+            yield return null;
+        }
+        PlayerPrefs.SetInt("UnitySelectMonitor", 2);
+        SceneManager.UnloadSceneAsync(currentScene);
     }
     // Start is called before the first frame update
     void Start()
     {
+        OverseerOfTheBattlefield.setPainter(thePainter);
         yellowOrb.SetActive(false);
         blueOrb.SetActive(false);
         placeholder1 = GameObject.FindObjectsOfType<Monster>();
         foreach(Monster enemy in placeholder1){
             if(enemy.tag == "Area1"){
                 enemiesOnTheLeftBuilding.Add(enemy);
+                allMonster.Add(enemy);
             }else if(enemy.tag == "Area2"){
                 enemiesOnTheRightBuilding.Add(enemy);
+                allMonster.Add(enemy);
             }else if(enemy.tag == "Area3"){
                 enemiesOnTheRoad.Add(enemy);
+                allMonster.Add(enemy);
             }else{
                 enemiesOnTheBeach.Add(enemy);
+                allMonster.Add(enemy);
             }
         }
+        OverseerOfTheBattlefield.setMonsterList(allMonster);
     }
 
     // Update is called once per frame

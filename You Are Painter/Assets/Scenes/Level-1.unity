@@ -2359,10 +2359,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yellowOrb: {fileID: 759243810}
   blueOrb: {fileID: 1756814551}
-  enLB: {fileID: 0}
-  enRB: {fileID: 0}
-  enB: {fileID: 0}
-  enR: {fileID: 0}
   enemiesOnTheLeftBuilding: []
   enemiesOnTheRightBuilding: []
   enemiesOnTheRoad: []
@@ -5192,7 +5188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035311229}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 14.8}
+  m_LocalPosition: {x: 1, y: 0.5, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1122812059}
@@ -5375,7 +5371,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058191462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 0.5, z: 1.7}
+  m_LocalPosition: {x: -3, y: 0.5, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1555721830}

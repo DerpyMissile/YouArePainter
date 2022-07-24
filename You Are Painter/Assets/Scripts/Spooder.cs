@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spooder : Monster
 {
     public Spooder(){
-        movement = 3;
-        nature = "aggressive";
+        changemovement(3);
+        changenature("Aggressive");
     }
 }

@@ -10,4 +10,8 @@ public class PainterInBattle : MonoBehaviour
     public int getHP(){
         return hp;
     }
+
+    public int getAtk(){
+        return atk;
+    }
 }

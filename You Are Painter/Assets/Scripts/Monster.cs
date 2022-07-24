@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    protected int atk = 1;
-    protected int range = 1;
-    protected int movement = 1;
-    protected int hp = 1;
-    protected string nature = "neutral";
+    private int atk = 1;
+    private int range = 1;
+    private int movement = 1;
+    private int hp = 1;
+    private string nature = "neutral";
+    private int counter = 0;
 
-    void changeHP(int newhp){
+    public void decreaseHP(int howMuch){
+        hp-=howMuch;
+    }
+    public void changeHP(int newhp){
         hp = newhp;
     }
-    void changerange(int newrange){
+    public void changerange(int newrange){
         range = newrange;
     }
-    void changemovement(int newmovement){
+    public void changemovement(int newmovement){
         movement = newmovement;
+    }
+    public void changenature(string newnature){
+        nature = newnature;
+    }
+    public void changeCounter(int newcounter){
+        counter = newcounter;
+    }
+    public void decreaseCounter(){
+        counter--;
     }
     
     public int getHP(){
@@ -34,5 +47,8 @@ public class Monster : MonoBehaviour
     }
     public int getRange(){
         return range;
+    }
+    public int getCounter(){
+        return counter;
     }
 }
