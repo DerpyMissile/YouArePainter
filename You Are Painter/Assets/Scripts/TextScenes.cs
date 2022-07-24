@@ -13,9 +13,27 @@ public class TextScenes : MonoBehaviour
         int sceneNumber = GeneralEventManager.whatScene();
         switch(sceneNumber){
             case 1:
-                yield return new WaitForSeconds(1.0f);
+                //yield return new WaitForSeconds(3.0f);
+                nameText.transform.parent.position = new Vector3(600, nameText.transform.parent.position.y, nameText.transform.parent.position.z);
                 nameText.text = "Painter";
-                speechText.text = "Ugh...";
+                speechText.text = "SORRY CAN'T TALK RIGHT NOW GOTTA ZOOM";
+                yield return new WaitForSeconds(3.0f);
+                nameText.transform.parent.position = new Vector3(1200, nameText.transform.parent.position.y, nameText.transform.parent.position.z);
+                nameText.text = "The Great Sage";
+                speechText.text = "What? What are you on about, young one-";
+                yield return new WaitForSeconds(3.0f);
+                nameText.transform.parent.position = new Vector3(600, nameText.transform.parent.position.y, nameText.transform.parent.position.z);
+                nameText.text = "Painter";
+                speechText.text = "GAME JAM'S ENDING IN 20 HOURS GOTTA MOVE IT GOTTA GET THE CORE FEATURES IN THAT SHOULD'VE BEEN DONE 2 DAYS AGO";
+                yield return new WaitForSeconds(3.0f);
+                nameText.transform.parent.position = new Vector3(1200, nameText.transform.parent.position.y, nameText.transform.parent.position.z);
+                nameText.text = "The Great Sage";
+                speechText.text = "...what?";
+                yield return new WaitForSeconds(3.0f);
+                nameText.transform.parent.position = new Vector3(600, nameText.transform.parent.position.y, nameText.transform.parent.position.z);
+                nameText.text = "Painter";
+                speechText.text = "FDAKLFJL;ASFJLSA;JF";
+                yield return new WaitForSeconds(1.0f);
                 break;
             default:
                 break;

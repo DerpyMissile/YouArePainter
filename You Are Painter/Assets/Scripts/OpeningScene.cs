@@ -32,8 +32,8 @@ public class OpeningScene : MonoBehaviour
         painterTheWord.SetActive(true);
         yield return new WaitForSeconds(3.0f);
         if(platform.position.y <= -4){
-            platform.velocity = new Vector3(0, 3, 0);
-            yield return new WaitForSeconds(3.0f);
+            platform.velocity = new Vector3(0, 4.5f, 0);
+            yield return new WaitForSeconds(2.0f);
         }
         platform.velocity = new Vector3(0,0,0);
         platform.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ; 

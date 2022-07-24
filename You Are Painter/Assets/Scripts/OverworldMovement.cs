@@ -6,21 +6,21 @@ using UnityEngine.UI;
 public class OverworldMovement : MonoBehaviour
 {
     [SerializeField] Rigidbody painter;
-    [SerializeField] Rigidbody greatSage;
+    // [SerializeField] Rigidbody greatSage;
 
-    [SerializeField] Text nameText;
-    [SerializeField] Text speechText;
-    [SerializeField] GameObject leftPerson;
-    [SerializeField] GameObject rightPerson;
+    // [SerializeField] Text nameText;
+    // [SerializeField] Text speechText;
+    // [SerializeField] GameObject leftPerson;
+    // [SerializeField] GameObject rightPerson;
     float timeHoldButton = 0.0f;
     bool checkIfBumped = false;
 
     IEnumerator checkIfBump(){
-        nameText.transform.parent.position = new Vector3(518, nameText.transform.parent.position.y, nameText.transform.parent.position.z);
-        nameText.text = "Great Sage";
-        speechText.text = "OWAFJSDILAJSDLA;";
-        yield return new WaitForSeconds(3.0f);
-        checkIfBumped = false;
+        // nameText.transform.parent.position = new Vector3(518, nameText.transform.parent.position.y, nameText.transform.parent.position.z);
+        // nameText.text = "Great Sage";
+        // speechText.text = "OWAFJSDILAJSDLA;";
+        // yield return new WaitForSeconds(3.0f);
+        // checkIfBumped = false;
         yield return null;
     }
 
