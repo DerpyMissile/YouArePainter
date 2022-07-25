@@ -60,6 +60,29 @@ public class Level1 : MonoBehaviour
         checkForReals();
     }
 
+    void monsterTime(){
+        foreach(Monster enemy in allMonster){
+            if(enemy.getHP()>0 && enemy.GetComponent<Renderer>().isVisible){
+                string enemyNature = enemy.getNature();
+                switch(enemyNature){
+                    case "Aggressive":
+                        if(Mathf.RoundToInt(enemy.transform.position.x) == Mathf.RoundToInt(thePainter.transform.position.x) && Mathf.RoundToInt(enemy.transform.position.z) < Mathf.RoundToInt(thePainter.transform.position.z)){
+                            enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z+1);
+                        }else if(Mathf.RoundToInt(enemy.transform.position.x) == Mathf.RoundToInt(thePainter.transform.position.x) && Mathf.RoundToInt(enemy.transform.position.z) > Mathf.RoundToInt(thePainter.transform.position.z)){
+                            enemy.transform.position = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z-1);
+                        }else if(Mathf.RoundToInt(enemy.transform.position.x) > Mathf.RoundToInt(thePainter.transform.position.x)){
+                            enemy.transform.position = new Vector3(enemy.transform.position.x-1, enemy.transform.position.y, enemy.transform.position.z);
+                        }else{
+                            enemy.transform.position = new Vector3(enemy.transform.position.x+1, enemy.transform.position.y, enemy.transform.position.z);
+                        }
+                        break;
+                    case null:
+                        break;
+                }
+            }
+        }
+    }
+
     void checkForReals(){
         if(leftClear && rightClear && !yellowOrb.activeInHierarchy){
             yellowOrb.SetActive(true);
@@ -118,6 +141,9 @@ public class Level1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D)){
+            monsterTime();
+        }
         checkIfKilled();
         checkIfBumped();
     }
